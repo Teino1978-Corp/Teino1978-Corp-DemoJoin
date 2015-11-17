@@ -1,0 +1,19 @@
+public class DemoJoin { 
+  public static void main (String args []) { 
+  NewThread ob [] = {new NewThread ("One"), new NewThread ("Two"), new NewThread ("Three")}; 
+  for (int i = 0; i <3; i ++) 
+  System.out.println ("Thread" + ob [i] .name + "is alive:" + ob [i] .t.isAlive ()); 
+  try { 
+  System.out.println ("Waiting for threads to finish."); 
+  ob [0] .t.join (); 
+  ob [1] .t.join (); 
+  ob [2] .t.join (); 
+  } Catch (InterruptedException e) { 
+  // TODO: handle exception 
+  System.out.println ("Main thread Interrupted"); 
+  } 
+  for (int i = 0; i <3; i ++) 
+  System.out.println ("Thread" + ob [i] .name + "is alive:" + ob [i] .t.isAlive ()); 
+  System.out.println ("Main thread exiting."); 
+  } 
+  } 
